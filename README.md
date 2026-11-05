@@ -35,7 +35,16 @@ Databricks (Unity Catalog) · PySpark · SQL · Power BI
 - Identified a data entry error in CBS's published 2023 biogas figures through hierarchy and cross-measure checks; **confirmed by CBS**, with a correction scheduled for the November 2026 update.
 - Reconciled the two CBS tables: wind and hydro match exactly between annual and monthly data; the CBS percentage denominator was identified as gross production + imports − exports.
 
-## Repository structure
-```
-notebooks/   Databricks notebooks, one per ticket
-```
+## Notebooks
+| Ticket | Notebook | Content |
+|---|---|---|
+| 001 | [01_data_profiling.ipynb](notebooks/01_data_profiling.ipynb) | Structure, types, missing values, duplicates, hidden whitespace |
+| 002 | [02_data_quality.ipynb](notebooks/02_data_quality.ipynb) | 6 consistency checks, 10 findings, decisions for cleaning |
+
+
+## Data versions
+Analysis is based on `82610ENG` (updated 19 June 2026) and `84575ENG` (updated 30 September 2026), downloaded October 2026. Findings will be re-checked after the CBS November 2026 update.
+
+## Attribution
+Data: Statistics Netherlands (CBS), StatLine. Weather data (planned): Royal Netherlands Meteorological Institute (KNMI).
+
