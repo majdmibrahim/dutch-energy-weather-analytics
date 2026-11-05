@@ -19,7 +19,7 @@ Databricks (Unity Catalog) · PySpark · SQL · Power BI
 | Ticket | Description | Status |
 |---|---|---|
 | 001 | Profile the raw datasets | ✅ Done |
-| 002 | Data quality assessment | 🔄 In progress |
+| 002 | Data quality assessment | ✅ Done |
 | 003 | Data cleaning | ⏳ |
 | 004 | Build analytical tables | ⏳ |
 | 005 | KPI analysis (capacity factor) | ⏳ |
@@ -27,11 +27,13 @@ Databricks (Unity Catalog) · PySpark · SQL · Power BI
 | 007 | Power BI dashboard | ⏳ |
 | 008 | Final report | ⏳ |
 
-## Key findings so far (TICKET-001)
+## Key findings so far 
 - Monthly file mixes annual, quarterly and monthly rows, so naive sums would triple-count.
 - Annual file is hierarchical (totals alongside components).
 - All missing values traced to structural causes (technology not yet existing, interconnectors not yet built, provisional figures).
 - Hidden trailing whitespace in 6 period labels would have silently dropped data during date parsing.
+- Identified a data entry error in CBS's published 2023 biogas figures through hierarchy and cross-measure checks; **confirmed by CBS**, with a correction scheduled for the November 2026 update.
+- Reconciled the two CBS tables: wind and hydro match exactly between annual and monthly data; the CBS percentage denominator was identified as gross production + imports − exports.
 
 ## Repository structure
 ```
